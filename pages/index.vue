@@ -4,5 +4,8 @@
     <AppAlert>
       This is an auto-imported component
     </AppAlert>
+    <p>
+      <a href="/about">About</a>
+    </p>
   </div>
 </template>
