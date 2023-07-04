@@ -4,4 +4,8 @@ export default defineNuxtConfig({
   modules: [
     ['@nuxtjs/eslint-module', { /* module options */ }],
   ],
+  app: {
+    pageTransition: { name: 'page', mode: 'out-in' },
+    layoutTransition: { name: 'layout', mode: 'out-in' },
+  },
 })
