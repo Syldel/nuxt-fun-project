@@ -1,3 +1,23 @@
 <template>
-  <header>Header</header>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <NuxtLink to="/">
+            Home
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/about">
+            About
+          </NuxtLink>
+        </li>
+      </ul>
+    </nav>
+  </header>
 </template>
+
+<style lang="sass" scoped>
+.router-link-active
+  font-weight: bold
+</style>

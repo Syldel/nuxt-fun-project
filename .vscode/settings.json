@@ -17,5 +17,7 @@
     "vue",
     "yml",
     "yaml"
-  ]
+  ],
+  "editor.tabSize": 2,
+  "editor.insertSpaces": false
 }

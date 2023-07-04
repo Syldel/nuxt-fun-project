@@ -1,3 +1,12 @@
+<script setup lang="ts">
+useHead({
+  title: 'Accueil',
+  meta: [
+    { name: 'description', content: 'My amazing website' },
+  ],
+})
+</script>
+
 <template>
   <div>
     <h1>Welcome to the homepage</h1>
