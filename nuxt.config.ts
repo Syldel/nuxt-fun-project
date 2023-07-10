@@ -8,4 +8,13 @@ export default defineNuxtConfig({
     pageTransition: { name: 'page', mode: 'out-in' },
     layoutTransition: { name: 'layout', mode: 'out-in' },
   },
+  vite: {
+    css: {
+      preprocessorOptions: {
+        sass: {
+          additionalData: '@import "@/assets/style/global.sass"',
+        },
+      },
+    },
+  },
 })
