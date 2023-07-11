@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: [
     ['@nuxtjs/eslint-module', { /* module options */ }],
+    '@unlazy/nuxt',
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },

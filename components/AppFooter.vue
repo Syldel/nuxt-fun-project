@@ -12,17 +12,21 @@ const currentYear = new Date().getFullYear()
 <template>
   <footer class="footer">
     <div>
-      <p class="footer__p">
+      <div class="footer__line">
         Copyright © {{ currentYear }}. All rights reserved.
-      </p>
-      <p class="footer__p">
-        <span class="footer__span"><img :src="githubSvg" alt="github" class="footer__img"> GitHub by <a href="https://github.com/Syldel" class="footer__link">@Syldel</a>.</span>
-        <span class="footer__span">Using <img :src="vueSvg" alt="vue" class="footer__img"> Vue v{{ vueVersion }} and <img :src="nuxtSvg" alt="nuxt" class="footer__img"> Nuxt v{{ nuxtVersion }}</span>
-      </p>
+      </div>
+      <div class="footer__line">
+        <div class="footer__sub">
+          <BlurHashLazyImage :src="githubSvg" :width="18" :height="18" class="footer__img" /> GitHub by <a href="https://github.com/Syldel" class="footer__link">@Syldel</a>.
+        </div>
+        <div class="footer__sub">
+          Using <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" /> Vue v{{ vueVersion }} and <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" /> Nuxt v{{ nuxtVersion }}
+        </div>
+      </div>
     </div>
     <div>
-      <img :src="vueSvg" alt="vue" class="footer__img">
-      <img :src="nuxtSvg" alt="nuxt" class="footer__img">
+      <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" />
+      <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" />
     </div>
   </footer>
 </template>
@@ -43,21 +47,26 @@ const currentYear = new Date().getFullYear()
   > div
     &:first-child
       flex: 1
+    &:last-child
+      display: flex
 
-  &__p,
-  &__span
+  &__line,
+  &__sub
     display: flex
     align-items: center
     margin: 0
 
-  &__p
+  &__line
     flex-wrap: wrap
     &:first-child
       margin-bottom: 3px
 
-  &__span
+  &__sub
     &:first-child
       margin-right: 5px
+      .footer__img
+        &:first-child
+          margin-left: 0
 
   &__link
     margin-left: 3px
@@ -65,8 +74,6 @@ const currentYear = new Date().getFullYear()
   &__img
     margin-right: 3px
     margin-left: 5px
-    &:first-child
-      margin-left: 0
     width: 18px
     height: 18px
 </style>
