@@ -4,6 +4,7 @@ export default defineNuxtConfig({
   modules: [
     ['@nuxtjs/eslint-module', { /* module options */ }],
     '@unlazy/nuxt',
+    '@nuxtjs/color-mode',
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },

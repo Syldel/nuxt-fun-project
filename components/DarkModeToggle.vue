@@ -6,7 +6,7 @@ const props = defineProps({
   },
   ariaLabel: {
     type: String,
-    default: 'dark mode toggle',
+    default: 'color mode',
   },
   checked: {
     type: Boolean,
@@ -40,12 +40,6 @@ function handleClick() {
   </label>
 </template>
 
-<style lang="sass">
-:root
-  --light: #d8dbe0
-  --dark: #28292c
-</style>
-
 <style lang="sass" scoped>
 $ratioSize: 0.33
 
@@ -55,7 +49,7 @@ label
   width: calc(200px * $ratioSize)
   min-width: calc(200px * $ratioSize)
   height: calc(100px * $ratioSize)
-  background-color: var(--dark)
+  background-color: var(--bg)
   border-radius: 50px
   cursor: pointer
 
@@ -67,11 +61,11 @@ input
   display: none
 
   &:checked ~ .slider
-    background-color: var(--light)
+    background-color: var(--color)
 
     &::before
       transform: translateX(calc(95px* $ratioSize))
-      background-color: var(--dark)
+      background-color: var(--bg)
       box-shadow: none
 
 .slider
@@ -89,10 +83,11 @@ input
     width: calc(75px * $ratioSize)
     height: calc(75px * $ratioSize)
     border-radius: 50%
-    box-shadow: inset calc(28px* $ratioSize) calc(-4px* $ratioSize) 0px 0px var(--light)
-    background-color: var(--dark)
+    box-shadow: inset calc(28px* $ratioSize) calc(-4px* $ratioSize) 0px 0px var(--color)
+    background-color: var(--bg)
     transition: 0.3s
 
 .text
   color: #ffffff00
+  font-size: 8px
 </style>

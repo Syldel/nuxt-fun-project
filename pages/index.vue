@@ -84,5 +84,5 @@ setTimeout(() => timerOK.value = false, 6000)
 
 <style lang="sass" scoped>
 pre
-  background-color: #f6f6f6
+  background-color: var(--bg-secondary)
 </style>

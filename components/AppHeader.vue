@@ -1,8 +1,10 @@
 <script setup lang="ts">
+const colorMode = useColorMode()
+
+const darkModeChecked = ref(colorMode.value === 'light')
+
 function darkModeChange(checked: boolean) {
-  // eslint-disable-next-line no-console
-  console.log('darkModeChange', checked)
-  // TODO: Change "color mode"
+  colorMode.value = checked ? 'light' : 'dark'
 }
 </script>
 
@@ -30,7 +32,7 @@ function darkModeChange(checked: boolean) {
         </li>
       </ul>
     </nav>
-    <DarkModeToggle @change="darkModeChange" />
+    <DarkModeToggle :checked="darkModeChecked" @change="darkModeChange" />
     <div>Test</div>
   </header>
 </template>
@@ -40,7 +42,7 @@ header
   display: flex
   align-items: center
   gap: 10px
-  background-color: #333
+  background-color: var(--bg-tertiary)
 
   flex-direction: row
   @include for-phone
@@ -54,7 +56,7 @@ header
     margin: 0
     padding: 0
     overflow: hidden
-    background-color: #333
+    background-color: var(--bg-tertiary)
 
     li
       &:first-child
@@ -71,16 +73,19 @@ header
         border-right: none
         margin-left: 0
 
+        border-bottom: 1px solid #bbb
+        &:last-child
+          border-bottom: none
+
       a
         display: block
-        color: white
         text-align: center
         text-decoration: none
         padding: 14px 16px
         margin: 3px 0
 
         &:hover
-          background-color: #111
+          background-color: var(--bg)
 
       .router-link-active
         font-weight: bold
