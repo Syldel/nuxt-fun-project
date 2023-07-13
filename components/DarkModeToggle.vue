@@ -2,6 +2,11 @@
 const props = defineProps({
   id: {
     type: String,
+    default: 'dark-mode-toggle',
+  },
+  ariaLabel: {
+    type: String,
+    default: 'dark mode toggle',
   },
   checked: {
     type: Boolean,
@@ -28,9 +33,10 @@ function handleClick() {
 </script>
 
 <template>
-  <label :tabindex="disabled ? undefined : 0" :class="{ disabled }" @keypress.space.prevent="handleSpace">
-    <input :id="id" v-model="checkedRef" type="checkbox" :disabled="disabled">
+  <label :tabindex="disabled ? undefined : 0" :class="{ disabled }" :htmlFor="id" @keypress.space.prevent="handleSpace">
+    <input :id="id" v-model="checkedRef" type="checkbox" :disabled="disabled" role="switch">
     <span class="slider" @click="handleClick" />
+    <span class="text">{{ ariaLabel }}</span>
   </label>
 </template>
 
@@ -47,6 +53,7 @@ label
   position: relative
   display: block
   width: calc(200px * $ratioSize)
+  min-width: calc(200px * $ratioSize)
   height: calc(100px * $ratioSize)
   background-color: var(--dark)
   border-radius: 50px
@@ -85,4 +92,7 @@ input
     box-shadow: inset calc(28px* $ratioSize) calc(-4px* $ratioSize) 0px 0px var(--light)
     background-color: var(--dark)
     transition: 0.3s
+
+.text
+  color: #ffffff00
 </style>
