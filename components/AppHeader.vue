@@ -82,7 +82,7 @@ header
         text-align: center
         text-decoration: none
         padding: 14px 16px
-        margin: 3px 0
+        margin: 3px
 
         &:hover
           background-color: var(--bg)
