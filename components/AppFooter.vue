@@ -33,14 +33,14 @@ const currentYear = new Date().getFullYear()
 
 <style lang="sass" scoped>
 .footer
-  margin-top: 10px
+  margin: 24px
   font-size: 12px
   display: flex
   align-items: center
   flex-wrap: wrap
 
   flex-direction: row
-  @include for-very-small-screen
+  @include until-breakpoint(verysmall)
     flex-direction: column
     gap: 15px
 

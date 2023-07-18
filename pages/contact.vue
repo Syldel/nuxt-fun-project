@@ -9,6 +9,7 @@ useHead({
 
 <template>
   <section>
+    <h1><span>Contact</span></h1>
     <p>This page will be displayed at the /contact route.</p>
   </section>
 </template>

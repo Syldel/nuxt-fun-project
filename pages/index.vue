@@ -14,8 +14,8 @@ setTimeout(() => timerOK.value = false, 6000)
 </script>
 
 <template>
-  <div>
-    <h1>Welcome to the homepage</h1>
+  <section>
+    <h1><span>Welcome</span> to the homepage</h1>
     <AppAlert>
       This is an auto-imported component
     </AppAlert>
@@ -79,7 +79,7 @@ setTimeout(() => timerOK.value = false, 6000)
         src="https://images.pexels.com/photos/5591708/pexels-photo-5591708.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" :width="200" :height="200"
       />
     </p>
-  </div>
+  </section>
 </template>
 
 <style lang="sass" scoped>

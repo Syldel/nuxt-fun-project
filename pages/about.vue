@@ -12,6 +12,7 @@ useHead({
 
 <template>
   <section>
+    <h1><span>À propos</span></h1>
     <p>This page will be displayed at the /about route.</p>
     <p><a href="/">Home</a></p>
   </section>

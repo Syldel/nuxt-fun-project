@@ -29,3 +29,22 @@ body
 
 a
   color: var(--color-primary)
+
+h1
+  margin-bottom: 1rem
+  font-size: 1.875rem
+  line-height: 2.25rem
+  font-weight: 800
+
+  @include from-breakpoint(phone)
+    font-size: 3rem
+    line-height: 1
+
+  @include from-breakpoint(desktop)
+    font-size: 3.75rem
+    line-height: 1
+
+  span
+    color: transparent
+    background-clip: text
+    background-image: linear-gradient(to right, #38bdf8, #059669)

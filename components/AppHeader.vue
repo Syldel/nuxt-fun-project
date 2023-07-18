@@ -45,7 +45,7 @@ header
   background-color: var(--bg-tertiary)
 
   flex-direction: row
-  @include for-phone
+  @include until-breakpoint(phone)
     flex-direction: column
 
   nav
@@ -67,7 +67,7 @@ header
         border-right: none
 
       float: left
-      @include for-phone
+      @include until-breakpoint(phone)
         float: none
         width: 100%
         border-right: none

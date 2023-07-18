@@ -1,27 +1,14 @@
-@mixin for-very-small-screen
-  @media (max-width: 320px)
-    @content
+$breakpoints: (verysmall: 320px, small: 480px, phone: 768px, tablet: 1024px, desktop: 1200px)
+@mixin from-breakpoint($name)
+  @if not map-has-key($breakpoints, $name)
+    @warn "Warning: `#{$name}` is not a valid breakpoint name."
+  @else
+    @media (min-width: map-get($breakpoints, $name))
+      @content
 
-@mixin for-phone
-  @media (max-width: 599px)
-    @content
-
-@mixin for-tablet
-  @media (min-width: 600px)
-    @content
-
-@mixin for-tablet-portrait
-  @media (min-width: 600px)
-    @content
-
-@mixin for-tablet-landscape
-  @media (min-width: 900px)
-    @content
-
-@mixin for-desktop
-  @media (min-width: 1200px)
-    @content
-
-@mixin for-big-desktop
-  @media (min-width: 1800px)
-    @content
+@mixin until-breakpoint($name)
+  @if not map-has-key($breakpoints, $name)
+    @warn "Warning: `#{$name}` is not a valid breakpoint name."
+  @else
+    @media (max-width: map-get($breakpoints, $name) - 1)
+      @content
