@@ -1,0 +1,44 @@
+name: Build and Deploy
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  # Setting an environment variable with the value of a configuration variable
+  GQL_HOST: ${{ vars.GQL_HOST }}
+  NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL }}
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+      - uses: actions/setup-node@v1 # this installs node and npm for us
+        with:
+          node-version: 16.x
+      - uses: actions/cache@v1
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-node-
+      - name: Print vars.GQL_HOST
+        run: echo 'vars.GQL_HOST -> ${{ vars.GQL_HOST }}'
+      - name: Print GraphQL HOST ENV
+        run: echo "GraphQL HOST -> $GQL_HOST"
+      - name: Print NUXT_APP_BASE_URL ENV
+        run: echo "NUXT_APP_BASE_URL -> $NUXT_APP_BASE_URL"
+      - name: Build
+        run: |
+          npm install
+          npm run generate
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@releases/v3
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages
+          FOLDER: .output/public
+          CLEAN: true
