@@ -89,5 +89,5 @@ input
 
 .text
   color: #ffffff00
-  font-size: 8px
+  font-size: 12px
 </style>

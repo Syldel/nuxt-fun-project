@@ -49,6 +49,7 @@ const currentYear = new Date().getFullYear()
       flex: 1
     &:last-child
       display: flex
+      align-items: center
 
   &__line,
   &__sub

@@ -32,8 +32,13 @@ function darkModeChange(checked: boolean) {
         </li>
       </ul>
     </nav>
-    <DarkModeToggle :checked="darkModeChecked" @change="darkModeChange" />
-    <div>Test</div>
+    <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
+    <div class="social-icons">
+      <BubbleIcon :font-size="18">
+        <nuxt-icon name="linkedin" />
+      </BubbleIcon>
+      <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+    </div>
   </header>
 </template>
 
@@ -89,4 +94,33 @@ header
 
       .router-link-active
         font-weight: bold
+
+  .dark-mode-toggle
+    opacity: 0
+    animation-fill-mode: forwards
+    animation-name: fade-in-animation
+    animation-duration: 0.9s
+    animation-delay: 1.2s
+
+  .social-icons
+    display: flex
+    gap: size(12)
+    margin: 0 size(24)
+    @include until-breakpoint(phone)
+      margin: size(12) 0
+
+    > div
+      opacity: 0
+      animation-fill-mode: forwards
+      animation-name: fade-in-animation
+      animation-duration: 0.9s
+      animation-delay: 1.5s
+      &:last-child
+        animation-delay: 1.75s
+
+  @keyframes fade-in-animation
+    0%
+      opacity: 0
+    100%
+      opacity: 1
 </style>
