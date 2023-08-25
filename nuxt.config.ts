@@ -6,6 +6,7 @@ export default defineNuxtConfig({
     '@unlazy/nuxt',
     '@nuxtjs/color-mode',
     'nuxt-icons',
+    'nuxt-graphql-client',
   ],
   app: {
     pageTransition: { name: 'page', mode: 'out-in' },
@@ -18,6 +19,11 @@ export default defineNuxtConfig({
           additionalData: '@import "@/assets/style/global.sass"',
         },
       },
+    },
+  },
+  runtimeConfig: {
+    public: {
+      GQL_HOST: process.env.GQL_HOST,
     },
   },
 })

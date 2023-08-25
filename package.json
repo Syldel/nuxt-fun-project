@@ -17,6 +17,7 @@
     "@unlazy/nuxt": "^0.9.1",
     "eslint": "^8.43.0",
     "nuxt": "^3.6.1",
+    "nuxt-graphql-client": "^0.2.30",
     "nuxt-icons": "^3.2.1",
     "sass": "^1.63.6"
   }

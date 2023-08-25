@@ -11,6 +11,8 @@ const { data } = await useFetch('/api/hello')
 const timerOK = ref(false)
 setTimeout(() => timerOK.value = true, 4000)
 setTimeout(() => timerOK.value = false, 6000)
+
+const allFilms = await GqlGetAllFilms()
 </script>
 
 <template>
@@ -22,7 +24,10 @@ setTimeout(() => timerOK.value = false, 6000)
     <p>
       <a href="/about">About</a>
     </p>
+    <h2>useFetch /api/hello</h2>
     <pre>{{ data }}</pre>
+    <h2>GraphQL allFilms</h2>
+    <pre>{{ allFilms }}</pre>
     <p>timerOK: {{ timerOK }}</p>
     <UnLazyImage
       blurhash="LGF5?xYk^6#M@-5c,1J5@[or[Q6."
