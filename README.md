@@ -1,4 +1,4 @@
-# Nuxt 3 Minimal Starter
+# My Nuxt 3 project
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -64,15 +64,24 @@ Check out the [deployment documentation](https://nuxt.com/docs/getting-started/d
 
 ## GitHub Pages
 
-Define .env file with:
-`GQL_HOST=`
+Define .env file with:\
+`GQL_HOST=`\
 Go in the Github repository settings, in "Secrets and variables" / "Actions" / "Variables", click "New repository variable".
 
-Look the result (static version):
+Look the result (static version):\
 https://syldel.github.io/nuxt-fun-project/
 
-Help here:
+Help here:\
 https://dev.to/angular/build-deploy-angular-apps-in-github-pages-using-github-actions-e7a
 
-To enable GITHUB_TOKEN:
+**To enable GITHUB_TOKEN:**\
 Go in the Github repository settings, in "Actions" / "General" / "Workflow permissions", enable "Read and write permissions"!
+
+### Relative path problems
+
+**baseURL**\
+By default, the Nuxt baseURL is set to '/'.\
+However, the baseURL can be updated at runtime by setting the NUXT_APP_BASE_URL as an environment variable.
+
+**underscore-prefixed directories**\
+By default GitHub Pages ignores underscore-prefixed directories. The fix is to add a .nojekyll file.
