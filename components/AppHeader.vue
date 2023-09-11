@@ -117,10 +117,4 @@ header
       animation-delay: 1.5s
       &:last-child
         animation-delay: 1.75s
-
-  @keyframes fade-in-animation
-    0%
-      opacity: 0
-    100%
-      opacity: 1
 </style>
