@@ -28,6 +28,13 @@ const films = allFilmsData.allFilms?.films as Film[]
       <a href="/about">About</a>
     </p>
 
+    <FloatingContainer :width="150" :height="150">
+      <UnLazyImage
+        blurhash="LgNdE+R*.TWB?bofkCof9uaeeTWB"
+        src="assets/images/sdelescluse_photolemur_fix01_smaller_square.jpg"
+      />
+    </FloatingContainer>
+
     <AppProExperiences :items="films" />
     <p v-for="(entry, i) of films" :key="entry?.id">
       {{ i + 1 }}. Title: {{ entry?.title }} ({{
