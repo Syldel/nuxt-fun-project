@@ -34,10 +34,14 @@ function darkModeChange(checked: boolean) {
     </nav>
     <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
     <div class="social-icons">
-      <BubbleIcon :font-size="18">
-        <nuxt-icon name="linkedin" />
-      </BubbleIcon>
-      <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank">
+        <BubbleIcon :font-size="18">
+          <nuxt-icon name="linkedin" />
+        </BubbleIcon>
+      </a>
+      <a href="http://twitter.com/GeekSpaceMaster" target="_blank">
+        <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+      </a>
     </div>
   </header>
 </template>
