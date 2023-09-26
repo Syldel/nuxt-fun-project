@@ -21,13 +21,13 @@ function darkModeChange(checked: boolean) {
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/about">
-            About
+          <NuxtLink to="/gallup">
+            Gallup
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/gallup">
-            Gallup
+          <NuxtLink to="/about">
+            À propos
           </NuxtLink>
         </li>
         <li>
