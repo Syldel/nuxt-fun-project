@@ -1,7 +1,6 @@
-import type { GetAllFilmsQuery } from '.nuxt/gql/default'
+import type { GetAllTechnosQuery } from '.nuxt/gql/default'
 
 // Documentation : https://www.typescriptlang.org/docs/handbook/2/indexed-access-types.html
-type AllFilms = NonNullable<GetAllFilmsQuery['allFilms']>
-type Film = NonNullable<NonNullable<AllFilms['films']>[number]>
+type Techno = NonNullable<GetAllTechnosQuery['technos']>[number]
 
-export default Film
+export { Techno }

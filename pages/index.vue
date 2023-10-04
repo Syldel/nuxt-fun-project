@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import type Film from '@/types/gql'
-
 useHead({
   title: 'Accueil',
   meta: [
@@ -13,9 +11,6 @@ const { data } = await useFetch('/api/hello')
 const timerOK = ref(false)
 setTimeout(() => timerOK.value = true, 4000)
 setTimeout(() => timerOK.value = false, 6000)
-
-const allFilmsData = await GqlGetAllFilms()
-const films = allFilmsData.allFilms?.films as Film[]
 </script>
 
 <template>
@@ -37,18 +32,8 @@ const films = allFilmsData.allFilms?.films as Film[]
       </FloatingContainer>
     </div>
 
-    <AppProExperiences :items="films" />
-    <p v-for="(entry, i) of films" :key="entry?.id">
-      {{ i + 1 }}. Title: {{ entry?.title }} ({{
-        entry?.releaseDate
-      }})
-    </p>
-
     <h2>useFetch /api/hello</h2>
     <pre>{{ data }}</pre>
-
-    <h2>GraphQL allFilms</h2>
-    <pre>{{ allFilmsData }}</pre>
 
     <p>timerOK: {{ timerOK }}</p>
     <UnLazyImage
