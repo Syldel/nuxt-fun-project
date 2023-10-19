@@ -23,6 +23,8 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
+      S3_BUCKET_NAME: process.env.S3_BUCKET_NAME,
+      S3_REGION: process.env.S3_REGION,
       GQL_HOST: process.env.GQL_HOST,
     },
   },

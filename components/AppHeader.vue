@@ -21,8 +21,18 @@ function darkModeChange(checked: boolean) {
           </NuxtLink>
         </li>
         <li>
+          <NuxtLink to="/technos">
+            Technos
+          </NuxtLink>
+        </li>
+        <li>
+          <NuxtLink to="/gallup">
+            Gallup
+          </NuxtLink>
+        </li>
+        <li>
           <NuxtLink to="/about">
-            About
+            À propos
           </NuxtLink>
         </li>
         <li>
@@ -34,10 +44,14 @@ function darkModeChange(checked: boolean) {
     </nav>
     <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
     <div class="social-icons">
-      <BubbleIcon :font-size="18">
-        <nuxt-icon name="linkedin" />
-      </BubbleIcon>
-      <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank">
+        <BubbleIcon :font-size="18">
+          <nuxt-icon name="linkedin" />
+        </BubbleIcon>
+      </a>
+      <a href="http://twitter.com/GeekSpaceMaster" target="_blank">
+        <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+      </a>
     </div>
   </header>
 </template>
@@ -117,10 +131,4 @@ header
       animation-delay: 1.5s
       &:last-child
         animation-delay: 1.75s
-
-  @keyframes fade-in-animation
-    0%
-      opacity: 0
-    100%
-      opacity: 1
 </style>

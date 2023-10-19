@@ -10,6 +10,22 @@ useHead({
 <template>
   <section>
     <h1><span>Contact</span></h1>
-    <p>This page will be displayed at the /contact route.</p>
+    <p>Contactez-moi de préférence via LinkedIn :</p>
+    <div class="contact__liens">
+      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank">
+        <BubbleIcon :font-size="18">
+          <nuxt-icon name="linkedin" />
+        </BubbleIcon>
+      </a>
+      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank">https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886</a>
+    </div>
   </section>
 </template>
+
+<style lang="sass" scoped>
+.contact__liens
+  display: flex
+  align-items: center
+  justify-content: center
+  gap: size(12)
+</style>

@@ -1,0 +1,11 @@
+query GetAllTechnos {
+  technos {
+    id
+    name
+    content {
+      document
+    }
+    blurhash
+    image_40
+  }
+}

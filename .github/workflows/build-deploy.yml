@@ -9,6 +9,8 @@ env:
   # Setting an environment variable with the value of a configuration variable
   GQL_HOST: ${{ vars.GQL_HOST }}
   NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL }}
+  S3_BUCKET_NAME: ${{ vars.S3_BUCKET_NAME }}
+  S3_REGION: ${{ vars.S3_REGION }}
 
 jobs:
   build-and-deploy:

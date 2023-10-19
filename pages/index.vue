@@ -11,8 +11,6 @@ const { data } = await useFetch('/api/hello')
 const timerOK = ref(false)
 setTimeout(() => timerOK.value = true, 4000)
 setTimeout(() => timerOK.value = false, 6000)
-
-const allFilms = await GqlGetAllFilms()
 </script>
 
 <template>
@@ -24,10 +22,19 @@ const allFilms = await GqlGetAllFilms()
     <p>
       <a href="/about">About</a>
     </p>
+
+    <div class="layout__abs-left">
+      <FloatingContainer :width="150" :height="150">
+        <UnLazyImage
+          blurhash="LgNdE+R*.TWB?bofkCof9uaeeTWB"
+          src="assets/images/sdelescluse_photolemur_fix01_smaller_square.jpg"
+        />
+      </FloatingContainer>
+    </div>
+
     <h2>useFetch /api/hello</h2>
     <pre>{{ data }}</pre>
-    <h2>GraphQL allFilms</h2>
-    <pre>{{ allFilms }}</pre>
+
     <p>timerOK: {{ timerOK }}</p>
     <UnLazyImage
       blurhash="LGF5?xYk^6#M@-5c,1J5@[or[Q6."
