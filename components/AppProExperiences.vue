@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import type Film from '@/types/gql'
+import type { Experience } from '@/types/gql'
 
 defineProps<{
-  items?: Film[]
+  items?: Experience[]
 }>()
 
 function getYear(date: string | number | Date | null | undefined): number {
@@ -21,8 +21,8 @@ function displayDelay(index: number, items: any[]): number {
         <AppTimelineElement
           v-for="(item, index) in items"
           :key="item.id"
-          :start-year="getYear(item.releaseDate).toString()"
-          :end-year="getYear(item.releaseDate).toString()"
+          :start-year="getYear(item.startDate).toString()"
+          :end-year="getYear(item.endDate).toString()"
           :display-delay="displayDelay(index, items!)"
         >
           <AppProExperience :data="item" />

@@ -62,6 +62,11 @@ yarn preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## GraphQL use
+
+Start by create gql files in "queries" folder, ".nuxt/gql" files will be automatically updated.
+Then, you can write new type in "types" folder and use them in the project.
+
 ## GitHub Pages
 
 Define .env file with:\

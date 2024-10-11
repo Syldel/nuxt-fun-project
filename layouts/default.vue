@@ -43,4 +43,15 @@ main
       position: absolute
       top: size(0)
       right: size(48)
+
+    @include until-breakpoint(large)
+      :global(.layout__abs-left)
+        top: size(0)
+        right: size(0)
+        left: unset
+
+      :global(.layout__abs-left > *)
+        top: size(0)
+        right: size(0)
+        left: unset
 </style>

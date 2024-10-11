@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import logoImage from '@/assets/images/logo-syl-studio-w100px_green2_tiny.png'
+
 const colorMode = useColorMode()
 
 const darkModeChecked = ref(colorMode.value === 'light')
@@ -10,14 +12,14 @@ function darkModeChange(checked: boolean) {
 
 <template>
   <header>
-    <div style="background-color: #ccc">
-      Logo
+    <div class="header__logo">
+      <img :src="logoImage" alt="syl-studio">
     </div>
     <nav>
       <ul>
         <li>
           <NuxtLink to="/">
-            Home
+            Expérience
           </NuxtLink>
         </li>
         <li>
@@ -44,12 +46,12 @@ function darkModeChange(checked: boolean) {
     </nav>
     <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
     <div class="social-icons">
-      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank">
+      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank" aria-label="LinkedIn">
         <BubbleIcon :font-size="18">
           <nuxt-icon name="linkedin" />
         </BubbleIcon>
       </a>
-      <a href="http://twitter.com/GeekSpaceMaster" target="_blank">
+      <a href="http://twitter.com/GeekSpaceMaster" target="_blank" aria-label="Twitter">
         <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
       </a>
     </div>
@@ -66,6 +68,9 @@ header
   flex-direction: row
   @include until-breakpoint(phone)
     flex-direction: column
+
+  .header__logo
+    margin: 10px 20px
 
   nav
     width: 100%

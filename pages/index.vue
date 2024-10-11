@@ -1,46 +1,40 @@
 <script setup lang="ts">
+import type { Experience } from '@/types/gql'
+
+import profileImage from '@/assets/images/sdelescluse_photolemur_fix01_smaller_square.jpg'
+
 useHead({
   title: 'Accueil',
   meta: [
-    { name: 'description', content: 'My amazing website' },
+    { name: 'description', content: 'Mon expérience professionnelle' },
   ],
 })
 
-const { data } = await useFetch('/api/hello')
-
-const timerOK = ref(false)
-setTimeout(() => timerOK.value = true, 4000)
-setTimeout(() => timerOK.value = false, 6000)
+const { data } = await useAsyncGql({
+  operation: 'GetAllExperiences',
+})
+const experiences = ref<Experience[]>(data?.value?.experiences || [])
 </script>
 
 <template>
   <section>
-    <h1><span>Welcome</span> to the homepage</h1>
-    <AppAlert>
-      This is an auto-imported component
-    </AppAlert>
-    <p>
-      <a href="/about">About</a>
-    </p>
+    <h1><span>Bienvenue</span> sur mon CV</h1>
 
     <div class="layout__abs-left">
       <FloatingContainer :width="150" :height="150">
         <UnLazyImage
           blurhash="LgNdE+R*.TWB?bofkCof9uaeeTWB"
-          src="assets/images/sdelescluse_photolemur_fix01_smaller_square.jpg"
+          :src="profileImage"
+          alt="profile picture"
         />
       </FloatingContainer>
     </div>
 
-    <h2>useFetch /api/hello</h2>
-    <pre>{{ data }}</pre>
+    <h2>Mon expérience professionnelle</h2>
 
-    <p>timerOK: {{ timerOK }}</p>
-    <UnLazyImage
-      blurhash="LGF5?xYk^6#M@-5c,1J5@[or[Q6."
-      src="https://images.unsplash.com/photo-1576158114254-3ba81558b87d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80"
-      width="200" :lazy-load="timerOK"
-    />
+    <AppProExperiences :items="experiences" />
+    <!-- <pre>{{ experiences }}</pre> -->
+
     <BlurHashLazyImage
       blurhash="LGF5?xYk^6#M@-5c,1J5@[or[Q6."
       src="https://images.unsplash.com/photo-1576158114254-3ba81558b87d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1760&q=80" :width="200" :enable-lazy="false"
@@ -95,6 +89,6 @@ setTimeout(() => timerOK.value = false, 6000)
 </template>
 
 <style lang="sass" scoped>
-pre
-  background-color: var(--bg-tertiary)
+// pre
+//   background-color: var(--bg-tertiary)
 </style>

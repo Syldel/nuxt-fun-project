@@ -4,7 +4,7 @@ import type { Techno } from '@/types/gql'
 useHead({
   title: 'Technos',
   meta: [
-    { name: 'description', content: 'technos' },
+    { name: 'description', content: 'Technologies web' },
   ],
 })
 

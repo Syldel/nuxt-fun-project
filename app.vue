@@ -1,5 +1,8 @@
 <script setup>
 useHead({
+  htmlAttrs: {
+    lang: 'fr',
+  },
   titleTemplate: '%s - Mon super site',
 })
 </script>

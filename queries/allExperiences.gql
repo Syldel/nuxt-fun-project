@@ -1,0 +1,26 @@
+query GetAllExperiences {
+  experiences {
+    endDate
+    title
+    job
+    technos {
+      id
+      name
+      blurhash
+      image_40
+      image_150
+      image_300
+    }
+    blurhash
+    content {
+      document
+    }
+    id
+    startDate
+    technosCount
+    image_40
+    image_150
+    image_300
+    image_600
+  }
+}

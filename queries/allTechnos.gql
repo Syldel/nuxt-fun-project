@@ -2,10 +2,22 @@ query GetAllTechnos {
   technos {
     id
     name
+    experiencesCount
+    blurhash
+    image_40
+    image_150
+    image_300
+    image_600
+    experiences {
+      id
+      title
+      image_150
+      image_40
+      image_300
+      blurhash
+    }
     content {
       document
     }
-    blurhash
-    image_40
   }
 }

@@ -7,9 +7,6 @@ import vueSvg from '@/assets/svg/vue.svg'
 import nuxtSvg from '@/assets/svg/nuxt.svg'
 import gqlSvg from '@/assets/svg/graphql.svg'
 
-definePageMeta({
-  layout: 'custom',
-})
 useHead({
   title: 'À propos',
   meta: [
