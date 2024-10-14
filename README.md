@@ -88,5 +88,7 @@ Go in the Github repository settings, in "Actions" / "General" / "Workflow permi
 By default, the Nuxt baseURL is set to '/'.\
 However, the baseURL can be updated at runtime by setting the NUXT_APP_BASE_URL as an environment variable.
 
+![github-env](https://github.com/user-attachments/assets/d0b6e0af-b68d-47e5-951e-ef7f2b20444e)
+
 **underscore-prefixed directories**\
 By default GitHub Pages ignores underscore-prefixed directories. The fix is to add a .nojekyll file.
