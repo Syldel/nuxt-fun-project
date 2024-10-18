@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import logoImage from '@/assets/images/logo-syl-studio-w100px_green2_tiny.png'
+import logoSvgImage from '@/assets/images/logo-syl-studio_green.svg'
 
 const colorMode = useColorMode()
 
@@ -13,7 +13,7 @@ function darkModeChange(checked: boolean) {
 <template>
   <header>
     <div class="header__logo">
-      <img :src="logoImage" alt="syl-studio">
+      <img :src="logoSvgImage" alt="syl-studio" width="100" height="36">
     </div>
     <nav>
       <ul>
@@ -32,11 +32,11 @@ function darkModeChange(checked: boolean) {
             Gallup
           </NuxtLink>
         </li>
-        <li>
+        <!-- <li>
           <NuxtLink to="/about">
             À propos
           </NuxtLink>
-        </li>
+        </li> -->
         <li>
           <NuxtLink to="/contact">
             Contact
@@ -44,16 +44,18 @@ function darkModeChange(checked: boolean) {
         </li>
       </ul>
     </nav>
-    <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
-    <div class="social-icons">
-      <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank" aria-label="LinkedIn">
-        <BubbleIcon :font-size="18">
-          <nuxt-icon name="linkedin" />
-        </BubbleIcon>
-      </a>
-      <a href="http://twitter.com/GeekSpaceMaster" target="_blank" aria-label="Twitter">
-        <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
-      </a>
+    <div class="end-part">
+      <DarkModeToggle :checked="darkModeChecked" class="dark-mode-toggle" @change="darkModeChange" />
+      <div class="social-icons">
+        <a href="https://fr.linkedin.com/comm/in/sylvain-delescluse-30b42886" target="_blank" aria-label="LinkedIn">
+          <BubbleIcon :font-size="18">
+            <nuxt-icon name="linkedin" />
+          </BubbleIcon>
+        </a>
+        <a href="http://twitter.com/GeekSpaceMaster" target="_blank" aria-label="Twitter">
+          <BubbleIcon><nuxt-icon name="twitter" /></BubbleIcon>
+        </a>
+      </div>
     </div>
   </header>
 </template>
@@ -62,7 +64,7 @@ function darkModeChange(checked: boolean) {
 header
   display: flex
   align-items: center
-  gap: 10px
+  gap: size(10)
   background-color: var(--bg-tertiary)
 
   flex-direction: row
@@ -70,7 +72,9 @@ header
     flex-direction: column
 
   .header__logo
-    margin: 10px 20px
+    margin: size(10) size(24)
+    @include until-breakpoint(tablet)
+      margin: size(10) size(10) size(10) size(24)
 
   nav
     width: 100%
@@ -82,6 +86,10 @@ header
     overflow: hidden
     background-color: var(--bg-tertiary)
 
+    display: flex
+    flex-direction: row
+    justify-content: center
+
     li
       &:first-child
         margin-left: 3px
@@ -91,15 +99,16 @@ header
         border-right: none
 
       float: left
-      @include until-breakpoint(phone)
-        float: none
-        width: 100%
-        border-right: none
-        margin-left: 0
+      // For vertical menu on phone
+      // @include until-breakpoint(phone)
+      //   float: none
+      //   width: 100%
+      //   border-right: none
+      //   margin-left: 0
 
-        border-bottom: 1px solid #bbb
-        &:last-child
-          border-bottom: none
+      //   border-bottom: 1px solid #bbb
+      //   &:last-child
+      //     border-bottom: none
 
       a
         display: block
@@ -114,26 +123,32 @@ header
       .router-link-active
         font-weight: bold
 
-  .dark-mode-toggle
-    opacity: 0
-    animation-fill-mode: forwards
-    animation-name: fade-in-animation
-    animation-duration: 0.9s
-    animation-delay: 1.2s
-
-  .social-icons
+  .end-part
     display: flex
-    gap: size(12)
-    margin: 0 size(24)
-    @include until-breakpoint(phone)
-      margin: size(12) 0
+    flex-direction: row
+    align-items: center
+    gap: size(28)
 
-    > div
+    .dark-mode-toggle
       opacity: 0
       animation-fill-mode: forwards
       animation-name: fade-in-animation
       animation-duration: 0.9s
-      animation-delay: 1.5s
-      &:last-child
-        animation-delay: 1.75s
+      animation-delay: 1.2s
+
+    .social-icons
+      display: flex
+      gap: size(12)
+      margin: 0 size(24) 0 size(18)
+      @include until-breakpoint(phone)
+        margin: size(12) 0
+
+      > a
+        opacity: 0
+        animation-fill-mode: forwards
+        animation-name: fade-in-animation
+        animation-duration: 0.9s
+        animation-delay: 1.5s
+        &:last-child
+          animation-delay: 1.75s
 </style>

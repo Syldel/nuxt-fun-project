@@ -2,6 +2,9 @@
   <div>
     <AppHeader />
     <main>
+      <div class="layout__abs-left">
+        <AppSummaryProfile />
+      </div>
       <slot />
     </main>
     <AppFooter />
@@ -11,8 +14,9 @@
 <style lang="sass" scoped>
 main
   position: relative
+  min-height: size(330)
 
-  @include until-breakpoint(small)
+  @include until-breakpoint(phone)
     margin: size(12)
     max-width: none
 
@@ -21,7 +25,7 @@ main
       align-items: center
       justify-content: center
 
-  @include from-to-breakpoint(small, desktop)
+  @include from-to-breakpoint(phone, desktop)
     margin: size(24)
     max-width: none
 

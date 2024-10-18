@@ -34,8 +34,8 @@ onUnmounted(() => clearInterval(timeoutId))
       <slot />
     </div>
     <div class="years">
-      <span>{{ startYear }}</span>
       <span>{{ endYear }}</span>
+      <span>{{ startYear }}</span>
     </div>
   </div>
 </template>
@@ -50,7 +50,6 @@ onUnmounted(() => clearInterval(timeoutId))
 .timeline-element
   position: relative
   margin: 60px 85px
-  width: 100%
   line-height: 25px
 
   .line-with-points
@@ -58,10 +57,10 @@ onUnmounted(() => clearInterval(timeoutId))
     position: absolute
     top: 0
     left: -25px
-    height: 110%
+    height: 100%
 
     .line
-      height: 110%
+      height: 100%
       border: 2px solid var(--color)
       border-radius: 4px
       @include init-anim
@@ -94,15 +93,16 @@ onUnmounted(() => clearInterval(timeoutId))
     font-size: 1em
     left: -85px
     width: 40px
+    line-height: 20px
     text-align: right
     @include init-anim
 
     &:first-child
-      top: -17px
+      top: -16px
       animation-delay: 0.3s
 
     &:last-child
-      top: 107%
+      top: 100%
       animation-delay: 0s
 
   .slot-container

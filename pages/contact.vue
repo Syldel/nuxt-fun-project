@@ -8,7 +8,7 @@ useHead({
 </script>
 
 <template>
-  <section>
+  <section class="contact">
     <h1><span>Contact</span></h1>
     <p>Contactez-moi de préférence via LinkedIn :</p>
     <div class="contact__liens">
@@ -23,9 +23,13 @@ useHead({
 </template>
 
 <style lang="sass" scoped>
-.contact__liens
-  display: flex
-  align-items: center
-  justify-content: center
-  gap: size(12)
+.contact
+  @include from-to-breakpoint(phone, large)
+    margin-right: 200px
+
+  &__liens
+    display: flex
+    align-items: center
+    justify-content: center
+    gap: size(12)
 </style>

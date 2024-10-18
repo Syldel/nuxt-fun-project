@@ -18,9 +18,16 @@ const styleObject = reactive({
 
 <template>
   <div class="floating-container">
-    <div class="floating-container__animated" :style="styleObject">
-      <slot />
-    </div>
+    <SlideFadeTransition :display-delay="250">
+      <div class="floating-container__animated" :style="styleObject">
+        <slot />
+      </div>
+    </SlideFadeTransition>
+    <SlideFadeTransition :display-delay="230">
+      <div>
+        <slot name="content" />
+      </div>
+    </SlideFadeTransition>
   </div>
 </template>
 
@@ -29,8 +36,10 @@ $floatingDelta: 20
 
 .floating-container
   padding-top: size($floatingDelta)
+  min-width: max-content
 
   &__animated
+    margin: 0 auto
     box-sizing: border-box
     border: 5px white solid
     border-radius: 50%

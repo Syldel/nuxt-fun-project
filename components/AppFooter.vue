@@ -12,21 +12,32 @@ const currentYear = new Date().getFullYear()
 <template>
   <footer class="footer">
     <div>
-      <div class="footer__line">
-        Copyright © {{ currentYear }}. All rights reserved.
-      </div>
-      <div class="footer__line">
-        <div class="footer__sub">
-          <BlurHashLazyImage :src="githubSvg" :width="18" :height="18" class="footer__img" /> GitHub by <a href="https://github.com/Syldel" class="footer__link">@Syldel</a>.
+      <SlideFadeTransition :display-delay="1500">
+        <div class="footer__line">
+          <div class="footer__sub">
+            Copyright © {{ currentYear }}. All rights reserved.
+          </div>
+          <NuxtLink to="/about">
+            À propos
+          </NuxtLink>
         </div>
-        <div class="footer__sub">
-          Using <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" /> Vue v{{ vueVersion }} and <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" /> Nuxt v{{ nuxtVersion }}
+        <div class="footer__line">
+          <div class="footer__sub">
+            <BlurHashLazyImage :src="githubSvg" :width="18" :height="18" class="footer__img" /> GitHub by <a href="https://github.com/Syldel" class="footer__link">@Syldel</a>.
+          </div>
+          <div class="footer__sub">
+            Using <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" /> Vue v{{ vueVersion }} and <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" /> Nuxt v{{ nuxtVersion }}
+          </div>
         </div>
-      </div>
+      </SlideFadeTransition>
     </div>
     <div>
-      <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" />
-      <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" />
+      <SlideFadeTransition :display-delay="2000">
+        <div class="footer__icons">
+          <BlurHashLazyImage :src="vueSvg" :width="18" :height="18" class="footer__img" />
+          <BlurHashLazyImage :src="nuxtSvg" :width="18" :height="18" class="footer__img" />
+        </div>
+      </SlideFadeTransition>
     </div>
   </footer>
 </template>
@@ -47,7 +58,8 @@ const currentYear = new Date().getFullYear()
   > div
     &:first-child
       flex: 1
-    &:last-child
+    &:last-child,
+    .footer__icons
       display: flex
       align-items: center
 

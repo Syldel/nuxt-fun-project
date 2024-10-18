@@ -9,7 +9,7 @@ useHead({
 
 <!-- Keep only ONE DOM child element inside "template" for good transitions -->
 <template>
-  <div>
+  <div class="gallup">
     <section>
       <h1><span>CliftonStrengths</span> Gallup</h1>
       <p>Les entreprises qui parviennent à mettre à contribution les talents de leurs employés connaissent un plus grand succès. Elles sont notamment plus productives et rentables que les entreprises qui utilisent moins les talents de leurs employés. Par ailleurs, le personnel de ces entreprises est plus engagé au travail et a tendance à rester en poste plus longtemps.</p>
@@ -41,8 +41,14 @@ useHead({
 </template>
 
 <style lang="sass" scoped>
-h3 span
-  font-weight: normal
-  font-style: italic
-  font-size: size(12)
+.gallup
+  section
+    &:first-child
+      @include from-to-breakpoint(phone, large)
+        margin-right: 200px
+
+  h3 span
+    font-weight: normal
+    font-style: italic
+    font-size: size(12)
 </style>

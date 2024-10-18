@@ -2,7 +2,7 @@
 import type { Techno } from '@/types/gql'
 
 useHead({
-  title: 'Technos',
+  title: 'Technologies web',
   meta: [
     { name: 'description', content: 'Technologies web' },
   ],
@@ -17,10 +17,14 @@ const technos = ref<Techno[]>(data.value?.technos || [])
 <template>
   <section class="technos">
     <h1><span>Technologies</span> Web</h1>
-    <AppTechnoListItem v-for="techno of technos" :key="techno?.id" :techno="techno" />
+    <AppTechnoListItem v-for="(techno, index) of technos" :key="techno?.id" :techno="techno" :class="[index === 0 ? 'technos__item--withMarginRight' : '']" />
   </section>
 </template>
 
 <style lang="sass" scoped>
-// .technos
+.technos
+  &__item
+    &--withMarginRight
+      @include from-to-breakpoint(phone, large)
+        margin-right: 200px
 </style>
