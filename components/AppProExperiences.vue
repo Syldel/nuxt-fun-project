@@ -37,4 +37,8 @@ function displayDelay(index: number, items: any[]): number {
   .timeline-list-enter-from,
   .timeline-list-leave-to
     transform: translateY(20px)
+
+  :global(.timeline-element:first-child .pro-experience__text--content)
+    @include from-to-breakpoint(phone, large)
+      margin-right: 100px
 </style>
