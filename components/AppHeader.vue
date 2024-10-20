@@ -90,25 +90,37 @@ header
     flex-direction: row
     justify-content: center
 
-    li
-      &:first-child
-        margin-left: 3px
+    @include until-breakpoint(small)
+      flex-wrap: wrap
 
+    li
       border-right: 1px solid #bbb
       &:last-child
         border-right: none
 
       float: left
-      // For vertical menu on phone
-      // @include until-breakpoint(phone)
-      //   float: none
-      //   width: 100%
-      //   border-right: none
-      //   margin-left: 0
+      @include until-breakpoint(small)
+        float: none
+        width: 50%
+        border-right: none
 
-      //   border-bottom: 1px solid #bbb
-      //   &:last-child
-      //     border-bottom: none
+        &:nth-child(even)
+          width: calc(50% - 1px)
+          border-left: 1px solid #bbb
+
+        border-bottom: 1px solid #bbb
+        &:nth-last-child(-n+2)
+          border-bottom: none
+
+      @include until-breakpoint(verysmall)
+        width: 100%
+        &:nth-child(even)
+          width: 100%
+          border-left: none
+        &:nth-last-child(-n+2)
+          border-bottom: 1px solid #bbb
+        &:last-child
+          border-bottom: none
 
       a
         display: block

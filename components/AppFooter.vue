@@ -17,9 +17,6 @@ const currentYear = new Date().getFullYear()
           <div class="footer__sub">
             Copyright © {{ currentYear }}. All rights reserved.
           </div>
-          <NuxtLink to="/about">
-            À propos
-          </NuxtLink>
         </div>
         <div class="footer__line">
           <div class="footer__sub">

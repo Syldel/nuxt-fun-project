@@ -58,6 +58,9 @@ function s3Image(imgId: string | null | undefined): string {
   align-items: flex-start
   gap: 15px
 
+  @include until-breakpoint(small)
+    flex-direction: column
+
   &__image-container
     width: 40px
 
@@ -88,4 +91,8 @@ function s3Image(imgId: string | null | undefined): string {
 
   &__technos
     gap: 20px
+    @include until-breakpoint(phone)
+      gap: 10px 20px
+      flex-wrap: wrap
+      height: auto
 </style>
